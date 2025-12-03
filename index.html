@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="matrixCanvas"></canvas>
+    
+    <nav class="nav-blocks">
+        <a href="#proyectos" class="nav-block">
+            <h3>PROYECTOS</h3>
+        </a>
+        <a href="#sobre-mi" class="nav-block">
+            <h3>SOBRE MÍ</h3>
+        </a>
+        <a href="#contacto" class="nav-block">
+            <h3>CONTACTO</h3>
+        </a>
+    </nav>
+
+    <div class="container">
+        <section class="terminal-section">
+            <div class="terminal" id="mainTerminal">
+                <div class="terminal-header">
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                    <span class="terminal-title">arch@portfolio:~</span>
+                </div>
+                <div class="terminal-body" id="terminalBody">
+                    <div class="terminal-line">
+                        <span class="prompt">arch@portfolio:~$</span>
+                        <span class="command"> ./start.sh</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="content-section">
+            <h2 class="section-title" style="color: var(--cyan);">// PROYECTOS</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>E-Commerce Platform</h3>
+                    <p>Plataforma completa de comercio electrónico con panel de administración y pasarela de pagos integrada.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Real-Time Chat App</h3>
+                    <p>Aplicación de mensajería en tiempo real con soporte para grupos y compartir archivos multimedia.</p>
+                    <div class="project-tags">
+                        <span class="tag">WebSocket</span>
+                        <span class="tag">Vue.js</span>
+                        <span class="tag">Redis</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>AI Dashboard</h3>
+                    <p>Dashboard interactivo para visualización de datos y predicciones con modelos de machine learning.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">D3.js</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="content-section">
+            <h2 class="section-title" style="color: var(--magenta);">// SOBRE MÍ</h2>
+            <div class="about-content">
+                <p>
+                    Desarrollador full stack especializado en crear experiencias digitales innovadoras. 
+                    Con más de 5 años de experiencia construyendo aplicaciones web robustas y escalables.
+                </p>
+                <p>
+                    Apasionado por el código limpio, las arquitecturas eficientes y las interfaces que 
+                    realmente importen. Siempre explorando nuevas tecnologías y metodologías de desarrollo.
+                </p>
+                <div class="skills-grid">
+                    <div class="skill-item">JavaScript / TypeScript</div>
+                    <div class="skill-item">React / Vue / Angular</div>
+                    <div class="skill-item">Node.js / Express</div>
+                    <div class="skill-item">Python / Django</div>
+                    <div class="skill-item">PostgreSQL / MongoDB</div>
+                    <div class="skill-item">Docker / Kubernetes</div>
+                    <div class="skill-item">AWS / GCP</div>
+                    <div class="skill-item">CI/CD / DevOps</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="content-section">
+            <h2 class="section-title" style="color: var(--violet);">// CONTACTO</h2>
+            <div class="contact-content">
+                <p style="font-family: 'JetBrains Mono', monospace; color: var(--gray-light); font-size: 1.1rem; margin-bottom: 2rem;">
+                    ¿Tienes un proyecto en mente? Hablemos.
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:tu@email.com" class="contact-link">EMAIL</a>
+                    <a href="https://github.com/tuusuario" class="contact-link">GITHUB</a>
+                    <a href="https://linkedin.com/in/tuusuario" class="contact-link">LINKEDIN</a>
+                    <a href="https://twitter.com/tuusuario" class="contact-link">TWITTER</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
