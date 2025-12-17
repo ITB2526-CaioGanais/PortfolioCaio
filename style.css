@@ -9,7 +9,6 @@
     --cyan: #00FFE1;
     --magenta: #FF2D95;
     --violet: #9B5CFF;
-    /* Verde Chillón definido globalmente */
     --lime: #03FD03;
     --gray: #2A2A35;
     --gray-light: #404050;
@@ -30,7 +29,6 @@ body {
     width: 100%;
     height: 100%;
     z-index: 0;
-    /* CAMBIO: Opacidad subida al 50% para que se vea mucho más */
     opacity: 0.5;
 }
 
@@ -122,6 +120,13 @@ body::before {
         inset 0 0 15px rgba(155, 92, 255, 0.05);
 }
 
+.nav-block:nth-child(4):hover {
+    border-color: var(--lime);
+    box-shadow: 
+        0 0 20px rgba(3, 253, 3, 0.3),
+        inset 0 0 15px rgba(3, 253, 3, 0.05);
+}
+
 .nav-block h3 {
     font-family: 'Inter', sans-serif;
     font-weight: 900;
@@ -135,6 +140,7 @@ body::before {
 .nav-block:nth-child(1) h3 { color: var(--cyan); }
 .nav-block:nth-child(2) h3 { color: var(--magenta); }
 .nav-block:nth-child(3) h3 { color: var(--violet); }
+.nav-block:nth-child(4) h3 { color: var(--lime); }
 
 .terminal-section {
     display: flex;
@@ -155,7 +161,6 @@ body::before {
     border: 3px solid var(--gray);
     width: 100%;
     max-width: 600px;
-    /* Sombra verde chillón */
     box-shadow: 
         0 0 40px rgba(3, 253, 3, 0.2),
         inset 0 0 20px rgba(0, 0, 0, 0.5);
@@ -250,6 +255,120 @@ body::before {
     margin-bottom: 2rem;
     color: #fff;
 }
+
+/* ============================================ */
+/* NUEVA SECCIÓN SOBRE MÍ CON IMAGEN */
+/* ============================================ */
+
+.about-me-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+    margin-bottom: 4rem;
+}
+
+.about-me-terminal {
+    background: rgba(26, 26, 35, 0.95);
+    border: 3px solid var(--gray);
+    box-shadow: 
+        0 0 40px rgba(0, 255, 225, 0.2),
+        inset 0 0 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me-terminal .terminal-header {
+    background: var(--gray);
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 2px solid var(--cyan);
+}
+
+.about-me-body {
+    padding: 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    background: rgba(11, 11, 15, 0.8);
+    flex: 1;
+}
+
+.about-me-body p {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--gray-light);
+}
+
+.about-me-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-frame {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 3/4;
+    border: 4px solid var(--cyan);
+    padding: 0.5rem;
+    background: var(--bg);
+    box-shadow: 
+        0 0 30px rgba(0, 255, 225, 0.3),
+        inset 0 0 20px rgba(0, 255, 225, 0.05);
+    transition: all 0.3s ease;
+}
+
+.image-frame:hover {
+    border-color: var(--lime);
+    box-shadow: 
+        0 0 40px rgba(3, 253, 3, 0.4),
+        inset 0 0 25px rgba(3, 253, 3, 0.08);
+    transform: scale(1.02);
+}
+
+.image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(20%);
+    transition: filter 0.3s ease;
+}
+
+.image-frame:hover img {
+    filter: grayscale(0%);
+}
+
+.image-glow {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(45deg, var(--cyan), var(--magenta), var(--violet), var(--lime));
+    opacity: 0;
+    z-index: -1;
+    filter: blur(20px);
+    transition: opacity 0.3s ease;
+}
+
+.image-frame:hover .image-glow {
+    opacity: 0.3;
+    animation: rotateGlow 3s linear infinite;
+}
+
+@keyframes rotateGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ============================================ */
+/* PROYECTOS */
+/* ============================================ */
 
 .projects-grid {
     display: grid;
@@ -393,6 +512,140 @@ body::before {
     display: none;
 }
 
+/* ============================================ */
+/* ESTILOS DEL FORMULARIO DE CONTACTO */
+/* ============================================ */
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--cyan);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: var(--bg);
+    border: 2px solid var(--gray-light);
+    padding: 0.8rem 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--gray-light);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(64, 64, 80, 0.6);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--cyan);
+    box-shadow: 0 0 15px rgba(0, 255, 225, 0.3);
+    color: #fff;
+}
+
+.form-group input.invalid,
+.form-group textarea.invalid {
+    border-color: var(--magenta);
+}
+
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+    border-color: var(--magenta);
+}
+
+.form-group input:valid:not(:placeholder-shown),
+.form-group textarea:valid:not(:placeholder-shown) {
+    border-color: var(--lime);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.error-message {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--magenta);
+    font-size: 0.75rem;
+    margin-top: 0.3rem;
+    min-height: 1rem;
+}
+
+.submit-btn {
+    width: 100%;
+    background: var(--bg);
+    border: 3px solid var(--lime);
+    padding: 1.2rem 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+    color: var(--lime);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    background: var(--lime);
+    color: var(--bg);
+    box-shadow: 0 0 30px rgba(3, 253, 3, 0.5);
+    transform: translateY(-3px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.form-success {
+    background: rgba(3, 253, 3, 0.1);
+    border: 2px solid var(--lime);
+    padding: 1rem;
+    margin-top: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--lime);
+    text-align: center;
+    animation: fadeInSuccess 0.5s;
+}
+
+@keyframes fadeInSuccess {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================ */
+/* RESPONSIVE DESIGN */
+/* ============================================ */
+
 @media (max-width: 768px) {
     .nav-blocks {
         padding: 1rem;
@@ -427,6 +680,19 @@ body::before {
         padding: 1.5rem;
     }
 
+    .about-me-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-me-body {
+        padding: 1.5rem;
+    }
+
+    .image-frame {
+        max-width: 300px;
+    }
+
     .mobile-terminal-toggle {
         display: none;
     }
@@ -435,6 +701,10 @@ body::before {
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================ */
+/* EFECTOS Y ANIMACIONES */
+/* ============================================ */
 
 .glitch {
     animation: glitch 0.3s;

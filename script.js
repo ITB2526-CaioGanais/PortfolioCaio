@@ -1,4 +1,7 @@
+// ============================================
 // MATRIX BACKGROUND ANIMATION
+// ============================================
+
 const canvas = document.getElementById("matrixCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -25,18 +28,17 @@ for (let i = 0; i < columns; i++) {
 // Update the matrix animation
 function updateMatrix() {
     // Set the background color with transparency for trail effect
-    // Limpiamos el resplandor antes de pintar el fondo negro semitransparente
     ctx.shadowBlur = 0;
     ctx.fillStyle = "rgba(11, 11, 15, 0.05)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Set the text color and font (CAMBIADO A VERDE CHILLÓN + GLOW)
+    // Set the text color and font (verde chillón + glow)
     ctx.fillStyle = "#03FD03"; 
     ctx.font = "14px 'JetBrains Mono', monospace";
     
     // EFECTO NEÓN
-    ctx.shadowBlur = 8;        // Cantidad de brillo
-    ctx.shadowColor = "#03FD03"; // Color del brillo
+    ctx.shadowBlur = 8;
+    ctx.shadowColor = "#03FD03";
 
     // Loop through each column
     for (let i = 0; i < columns; i++) {
@@ -68,7 +70,10 @@ function renderMatrix() {
 // Start the animation
 renderMatrix();
 
+// ============================================
 // TERMINAL BOOT SEQUENCE
+// ============================================
+
 const bootSequence = [
     { text: '[  OK  ] Starting portfolio system...', class: 'success', delay: 100 },
     { text: '[  OK  ] Mounting /dev/skills...', class: 'success', delay: 150 },
@@ -146,13 +151,226 @@ setTimeout(() => {
     }
 }, 500);
 
-// Efectos de glitch en nav-blocks y cards
+// ============================================
+// EFECTOS DE GLITCH
+// ============================================
+
 const navBlocks = document.querySelectorAll('.nav-block');
 const projectCards = document.querySelectorAll('.project-card');
+const imageFrame = document.querySelector('.image-frame');
 
+// Añadir efecto glitch a nav blocks y project cards
 [...navBlocks, ...projectCards].forEach(element => {
     element.addEventListener('mouseenter', function() {
         this.classList.add('glitch');
         setTimeout(() => this.classList.remove('glitch'), 300);
+    });
+});
+
+// Añadir efecto glitch al marco de la imagen
+if (imageFrame) {
+    imageFrame.addEventListener('mouseenter', function() {
+        this.classList.add('glitch');
+        setTimeout(() => this.classList.remove('glitch'), 300);
+    });
+}
+
+// ============================================
+// VALIDACIÓN DEL FORMULARIO DE CONTACTO
+// ============================================
+
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    const inputs = {
+        nombre: document.getElementById('nombre'),
+        email: document.getElementById('email'),
+        telefono: document.getElementById('telefono'),
+        asunto: document.getElementById('asunto'),
+        mensaje: document.getElementById('mensaje')
+    };
+
+    const errorMessages = {
+        nombre: document.getElementById('errorNombre'),
+        email: document.getElementById('errorEmail'),
+        telefono: document.getElementById('errorTelefono'),
+        asunto: document.getElementById('errorAsunto'),
+        mensaje: document.getElementById('errorMensaje')
+    };
+
+    // Mensajes de error personalizados
+    const errors = {
+        nombre: {
+            valueMissing: 'El nombre es obligatorio',
+            patternMismatch: 'Solo se permiten letras (mínimo 3 caracteres)',
+            tooShort: 'El nombre debe tener al menos 3 caracteres'
+        },
+        email: {
+            valueMissing: 'El email es obligatorio',
+            typeMismatch: 'Formato de email inválido',
+            patternMismatch: 'Email inválido. Formato: usuario@dominio.com'
+        },
+        telefono: {
+            patternMismatch: 'Solo números, entre 9 y 15 dígitos'
+        },
+        asunto: {
+            valueMissing: 'El asunto es obligatorio',
+            tooShort: 'El asunto debe tener al menos 5 caracteres'
+        },
+        mensaje: {
+            valueMissing: 'El mensaje es obligatorio',
+            tooShort: 'El mensaje debe tener al menos 20 caracteres',
+            tooLong: 'El mensaje no puede superar los 500 caracteres'
+        }
+    };
+
+    // Función para mostrar error
+    function showError(input, message) {
+        const errorSpan = errorMessages[input.name];
+        if (errorSpan) {
+            errorSpan.textContent = message;
+            errorSpan.style.display = 'block';
+        }
+        input.classList.add('invalid');
+    }
+
+    // Función para limpiar error
+    function clearError(input) {
+        const errorSpan = errorMessages[input.name];
+        if (errorSpan) {
+            errorSpan.textContent = '';
+            errorSpan.style.display = 'none';
+        }
+        input.classList.remove('invalid');
+    }
+
+    // Validar campo individual
+    function validateField(input) {
+        const validity = input.validity;
+        const fieldErrors = errors[input.name];
+
+        // Si el campo está vacío y no es requerido, no mostrar error
+        if (!input.required && input.value.trim() === '') {
+            clearError(input);
+            return true;
+        }
+
+        if (validity.valueMissing) {
+            showError(input, fieldErrors.valueMissing);
+            return false;
+        }
+        if (validity.typeMismatch) {
+            showError(input, fieldErrors.typeMismatch);
+            return false;
+        }
+        if (validity.patternMismatch) {
+            showError(input, fieldErrors.patternMismatch);
+            return false;
+        }
+        if (validity.tooShort) {
+            showError(input, fieldErrors.tooShort);
+            return false;
+        }
+        if (validity.tooLong) {
+            showError(input, fieldErrors.tooLong);
+            return false;
+        }
+
+        clearError(input);
+        return true;
+    }
+
+    // Añadir eventos de validación en tiempo real
+    Object.values(inputs).forEach(input => {
+        if (input) {
+            // Validar al escribir (después del primer intento de envío)
+            input.addEventListener('input', function() {
+                if (this.hasAttribute('data-touched')) {
+                    validateField(this);
+                }
+            });
+
+            // Validar al salir del campo
+            input.addEventListener('blur', function() {
+                this.setAttribute('data-touched', 'true');
+                validateField(this);
+            });
+        }
+    });
+
+    // Manejar envío del formulario
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Marcar todos los campos como tocados
+        Object.values(inputs).forEach(input => {
+            if (input) {
+                input.setAttribute('data-touched', 'true');
+            }
+        });
+
+        // Validar todos los campos
+        let isValid = true;
+        Object.values(inputs).forEach(input => {
+            if (input && !validateField(input)) {
+                isValid = false;
+            }
+        });
+
+        if (isValid) {
+            // Aquí iría la lógica para enviar el formulario
+            // Por ahora, solo mostramos mensaje de éxito
+            const successDiv = document.getElementById('formSuccess');
+            successDiv.style.display = 'block';
+            
+            // Limpiar formulario
+            contactForm.reset();
+            
+            // Limpiar errores
+            Object.values(inputs).forEach(input => {
+                if (input) {
+                    clearError(input);
+                    input.removeAttribute('data-touched');
+                }
+            });
+
+            // Ocultar mensaje después de 5 segundos
+            setTimeout(() => {
+                successDiv.style.display = 'none';
+            }, 5000);
+
+            // Scroll al mensaje de éxito
+            successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+            // Hacer scroll al primer campo con error
+            const firstInvalid = contactForm.querySelector('.invalid');
+            if (firstInvalid) {
+                firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                firstInvalid.focus();
+            }
+        }
+    });
+}
+
+// ============================================
+// SMOOTH SCROLL PARA ENLACES INTERNOS
+// ============================================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        
+        // Solo aplicar smooth scroll si el href no es solo "#"
+        if (href !== '#' && href.length > 1) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
     });
 });

@@ -13,14 +13,14 @@
     <canvas id="matrixCanvas"></canvas>
     
     <nav class="nav-blocks">
-        <a href="#proyectos" class="nav-block">
-            <h3>PROYECTOS</h3>
+        <a href="index.html" class="nav-block">
+            <h3>HOME</h3>
         </a>
-        <a href="#sobre-mi" class="nav-block">
-            <h3>SOBRE MÍ</h3>
+        <a href="proyectos.html" class="nav-block">
+            <h3>PROJECTS</h3>
         </a>
-        <a href="#contacto" class="nav-block">
-            <h3>CONTACTO</h3>
+        <a href="contact.html" class="nav-block">
+            <h3>CONTACT</h3>
         </a>
     </nav>
 
@@ -42,75 +42,142 @@
             </div>
         </section>
 
-        <section id="proyectos" class="content-section">
-            <h2 class="section-title" style="color: var(--cyan);">// PROYECTOS</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>E-Commerce Platform</h3>
-                    <p>Plataforma completa de comercio electrónico con panel de administración y pasarela de pagos integrada.</p>
-                    <div class="project-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">MongoDB</span>
+        <!-- SOBRE MÍ CON IMAGEN -->
+        <section class="content-section">
+            <h2 class="section-title" style="color: var(--cyan);">✦ ABOUT ME</h2>
+            <div class="about-me-container">
+                <div class="about-me-terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-dot"></div>
+                        <div class="terminal-dot"></div>
+                        <div class="terminal-dot"></div>
+                        <span class="terminal-title">about-me.sh</span>
+                    </div>
+                    <div class="about-me-body">
+                        <div class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="command"> cat about-me.txt</span>
+                        </div>
+                        <div class="terminal-line output" style="margin-top: 1rem;">
+                            <h3 style="color: var(--lime); font-size: 1.8rem; margin-bottom: 1rem; font-family: 'Inter', sans-serif;">
+                                CAIO GANAIS
+                            </h3>
+                        </div>
+                        <div class="terminal-line output">
+                            <p style="margin-bottom: 1rem; color: aliceblue;">
+                                I'm Caio Ganais, Brazilian and living in Spain since I was 10 years old. I hold a degree in Cross-Platform Application Development (DAM) and am currently studying Network Computer Systems Administration (ASIR).</br></br>
+IT is my professional safe harbor, a field where I find stability while exploring my passions. I'm fascinated by the world of hacking and cybersecurity, areas where curiosity becomes a fundamental tool.</br></br>
+I'm a music lover in the broadest sense: from forró and samba to Metallica and hard techno, I've attended festivals like Duro Festival and concerts ranging from Travis Scott to Jamiroquai. This same curiosity has led me to master five languages (Portuguese, Spanish, Catalan, English, and French) and to become passionate about art in all its forms: painting, cinema, photography, fashion, and philosophy.</br></br>
+I'm an all-rounder who finds in technology the perfect medium to materialize ideas and solve problems. I'm looking for projects where I can contribute not only technical knowledge, but also fast learning ability, adaptability, and diverse perspectives.
+                            </p>
+                        </div>
+                        <div class="terminal-line output">
+                            <p style="margin-bottom: 1rem;">
+                                “Todo se ve amarillo antes de que pierdas tus datos.”
+                            </p>
+                        </div>
+                        <div class="terminal-line output">
+                            
+                        </div>
+                        <div class="terminal-line" style="margin-top: 1.5rem;">
+                            <span class="prompt">$</span>
+                            <span class="success"> ✓ Explora mis proyectos destacados ↓</span>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <h3>Real-Time Chat App</h3>
-                    <p>Aplicación de mensajería en tiempo real con soporte para grupos y compartir archivos multimedia.</p>
-                    <div class="project-tags">
-                        <span class="tag">WebSocket</span>
-                        <span class="tag">Vue.js</span>
-                        <span class="tag">Redis</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>AI Dashboard</h3>
-                    <p>Dashboard interactivo para visualización de datos y predicciones con modelos de machine learning.</p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">TensorFlow</span>
-                        <span class="tag">D3.js</span>
+                <div class="about-me-image">
+                    <div class="image-frame">
+                        <img src="files/nantesfoto.jpeg" alt="Mi foto de perfil">
+                        <div class="image-glow"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="sobre-mi" class="content-section">
-            <h2 class="section-title" style="color: var(--magenta);">// SOBRE MÍ</h2>
+        <!-- 2 PROYECTOS DESTACADOS -->
+        <section class="content-section">
+            <h2 class="section-title" style="color: var(--magenta);">// PROYECTOS DESTACADOS</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>E-Commerce Platform</h3>
+                    <p>Plataforma completa de comercio electrónico con panel de administración, sistema de pagos integrado y análisis en tiempo real.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">Stripe</span>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="proyecto1.html" class="contact-link" style="display: inline-block;">
+                            VER DETALLES →
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Real-Time Chat App</h3>
+                    <p>Aplicación de mensajería instantánea con soporte para grupos, videollamadas y compartir archivos multimedia en tiempo real.</p>
+                    <div class="project-tags">
+                        <span class="tag">WebSocket</span>
+                        <span class="tag">Vue.js</span>
+                        <span class="tag">Redis</span>
+                        <span class="tag">WebRTC</span>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="proyecto2.html" class="contact-link" style="display: inline-block;">
+                            VER DETALLES →
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="proyectos.html" class="contact-link" style="border-color: var(--cyan); color: var(--cyan); font-size: 1.1rem; padding: 1.2rem 2.5rem;">
+                    VER TODOS LOS PROYECTOS
+                </a>
+            </div>
+        </section>
+
+        <!-- BREVE SOBRE MÍ -->
+        <section class="content-section">
+            <h2 class="section-title" style="color: var(--violet);">// HABILIDADES</h2>
             <div class="about-content">
                 <p>
-                    Desarrollador full stack especializado en crear experiencias digitales innovadoras. 
-                    Con más de 5 años de experiencia construyendo aplicaciones web robustas y escalables.
+                    Desarrollador full stack con más de 5 años de experiencia construyendo aplicaciones 
+                    web robustas y escalables. Mi pasión es transformar ideas complejas en soluciones 
+                    digitales elegantes y funcionales.
                 </p>
-                <p>
-                    Apasionado por el código limpio, las arquitecturas eficientes y las interfaces que 
-                    realmente importen. Siempre explorando nuevas tecnologías y metodologías de desarrollo.
-                </p>
-                <div class="skills-grid">
+                <div style="margin-top: 2rem;">
+                    <a href="aboutme.html" class="contact-link" style="border-color: var(--violet); color: var(--violet);">
+                        CONOCE MÁS SOBRE MÍ →
+                    </a>
+                </div>
+                <div class="skills-grid" style="margin-top: 2rem;">
                     <div class="skill-item">JavaScript / TypeScript</div>
                     <div class="skill-item">React / Vue / Angular</div>
                     <div class="skill-item">Node.js / Express</div>
                     <div class="skill-item">Python / Django</div>
                     <div class="skill-item">PostgreSQL / MongoDB</div>
                     <div class="skill-item">Docker / Kubernetes</div>
-                    <div class="skill-item">AWS / GCP</div>
-                    <div class="skill-item">CI/CD / DevOps</div>
+                </div>
+                <div style="margin-top: 2rem; text-align: center;">
+                    <a href="aboutme.html" class="contact-link" style="border-color: var(--violet); color: var(--violet);">
+                        CONOCE MÁS SOBRE MÍ →
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section id="contacto" class="content-section">
-            <h2 class="section-title" style="color: var(--violet);">// CONTACTO</h2>
-            <div class="contact-content">
-                <p style="font-family: 'JetBrains Mono', monospace; color: var(--gray-light); font-size: 1.1rem; margin-bottom: 2rem;">
-                    ¿Tienes un proyecto en mente? Hablemos.
+        <!-- LLAMADA A ACCIÓN -->
+        <section class="content-section">
+            <div style="text-align: center; padding: 3rem 2rem; background: var(--gray); border: 4px solid var(--lime);">
+                <h2 style="color: var(--lime); font-size: 2rem; margin-bottom: 1rem; font-family: 'Inter', sans-serif;">
+                    ¿Listo para comenzar tu proyecto?
+                </h2>
+                <p style="font-family: 'JetBrains Mono', monospace; color: var(--gray-light); margin-bottom: 2rem; font-size: 1.1rem;">
+                    Hablemos sobre cómo puedo ayudarte a llevar tu idea al siguiente nivel
                 </p>
-                <div class="contact-links">
-                    <a href="mailto:tu@email.com" class="contact-link">EMAIL</a>
-                    <a href="https://github.com/tuusuario" class="contact-link">GITHUB</a>
-                    <a href="https://linkedin.com/in/tuusuario" class="contact-link">LINKEDIN</a>
-                    <a href="https://twitter.com/tuusuario" class="contact-link">TWITTER</a>
-                </div>
+                <a href="contact.html" class="contact-link" style="border-color: var(--lime); color: var(--lime); font-size: 1.1rem; padding: 1.2rem 2.5rem;">
+                    CONTÁCTAME
+                </a>
             </div>
         </section>
     </div>

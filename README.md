@@ -1,2 +1,2 @@
-# PortfolioCaio
-This is my personal Portfolio.
+# PortfolioSharedJaumeCaio
+Portfolio compartido para proyecto de MDS.
