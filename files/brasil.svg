@@ -1,0 +1,13 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo circular verde -->
+  <circle cx="256" cy="256" r="256" fill="#6DA544" />
+  
+  <!-- Rombo amarillo -->
+  <polygon points="256,100 470,256 256,412 42,256" fill="#F7D147" />
+  
+  <!-- Círculo azul central -->
+  <circle cx="256" cy="256" r="90" fill="#0052B4" />
+  
+  <!-- Franja blanca curva -->
+  <path d="M 168,245 Q 256,210 344,245 L 344,265 Q 256,230 168,265 Z" fill="#FFFFFF" />
+</svg>
