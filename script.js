@@ -81,12 +81,12 @@ const bootSequence = [
     { text: '[  OK  ] Initializing neural.network...', class: 'success', delay: 120 },
     { text: '', class: 'output', delay: 200 },
     { text: '════════════════════════════════════', class: 'info', delay: 50 },
-    { text: '    DESARROLLADOR FULL STACK', class: 'info', delay: 80 },
-    { text: '    Creando experiencias digitales', class: 'info', delay: 80 },
+    { text: '    FULL STACK DEVELOPER', class: 'info', delay: 80 },
+    { text: '    Crafting digital experiences', class: 'info', delay: 80 },
     { text: '════════════════════════════════════', class: 'info', delay: 50 },
     { text: '', class: 'output', delay: 200 },
-    { text: '> Sistema listo.', class: 'success', delay: 100 },
-    { text: '> Bienvenido al portfolio.', class: 'info', delay: 100 },
+    { text: '> System ready.', class: 'success', delay: 100 },
+    { text: '> Welcome to the portfolio.', class: 'info', delay: 100 },
     { text: '', class: 'output', delay: 100 }
 ];
 
