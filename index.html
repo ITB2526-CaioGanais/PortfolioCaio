@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
+    <!-- Datos META -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Developer</title>
+    <meta name="description" content="Portfolio de Caio Ganais - Desarrollador Android Junior especializado en Kotlin, con formación en Administración de Sistemas Informáticos en Red.">
+    <meta name="keywords" content="desarrollador, Android, Kotlin, portfolio, programación, ciberseguridad">
+    <meta name="author" content="Caio Ganais">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Portfolio | Caio Ganais - Developer">
+    <meta property="og:description" content="Desarrollador Android y apasionado por la ciberseguridad">
+    <meta property="og:type" content="website">
+    
+    <title>Portfolio | Caio Ganais - Developer</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="files/brasil.svg">
@@ -20,35 +29,38 @@
 <body>
     <canvas id="matrixCanvas"></canvas>
 
-    <nav class="nav-blocks">
-        <div class="nav-links">
-            <a href="proyectos.html" class="nav-block">
+    <!-- HEADER con logo y menú de navegación -->
+    <header class="nav-blocks">
+        <nav class="nav-links">
+            <a href="pages/proyectos.html" class="nav-block">
                 <h3>Projects</h3>
             </a>
             <a href="index.html" class="nav-block">
                 <h3>About Me</h3>
             </a>
-            <a href="contact.html" class="nav-block">
+            <a href="pages/contact.html " class="nav-block">
                 <h3>Contact</h3>
             </a>
-        </div>
+        </nav>
         <div class="social-icons">
-            <a href="https://github.com/tuusuario" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/tuusuario" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <svg class="social-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                 </svg>
             </a>
-            <a href="https://linkedin.com/in/tuusuario" target="_blank" rel="noopener noreferrer">
+            <a href="https://linkedin.com/in/tuusuario" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <svg class="social-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                 </svg>
             </a>
         </div>
-    </nav>
+    </header>
 
-    <div class="container">
+    <!-- MAIN con sections, articles y aside -->
+    <main class="container">
+        <!-- SECTION: Terminal -->
         <section class="terminal-section">
             <div class="terminal" id="mainTerminal">
                 <div class="terminal-header">
@@ -66,7 +78,7 @@
             </div>
         </section>
 
-        <!-- ABOUT ME WITH IMAGE -->
+        <!-- SECTION: About Me -->
         <section class="enhanced-about-section">
             <div class="section-header">
                 <div class="section-subtitle">// GET TO KNOW ME</div>
@@ -74,8 +86,8 @@
             </div>
 
             <div class="about-grid">
-                <!-- Photo Terminal -->
-                <div class="photo-terminal">
+                <!-- ASIDE: Photo Terminal -->
+                <aside class="photo-terminal">
                     <div class="terminal-header">
                         <div class="terminal-dot"></div>
                         <div class="terminal-dot"></div>
@@ -86,14 +98,14 @@
                         <img src="files/nantesfoto.jpeg" alt="Caio Ganais">
                         <div class="photo-overlay">
                             <div class="name-display">CAIO GANAIS</div>
-                            <div class="role-display">Developer & Creative</div>
+                            <div class="role-display" style="color: white;">Developer & Creative</div>
                         </div>
                     </div>
-                </div>
+                </aside>
 
-                <!-- Info Content -->
+                <!-- Info Content con ARTICLES -->
                 <div class="info-content">
-                    <div class="info-block">
+                    <article class="info-block">
                         <h3>WHO AM I?</h3>
                         <p style="color: white;">
                             I'm <span class="highlight-text">Caio Ganais</span>, Brazilian and living in Spain. I hold a degree in Cross-Platform Application Development (DAM) and am
@@ -104,9 +116,9 @@
                             passions. I'm fascinated by the world of <span class="highlight-text">hacking and
                                 cybersecurity</span>, areas where curiosity becomes a fundamental tool.
                         </p>
-                    </div>
+                    </article>
 
-                    <div class="info-block">
+                    <article class="info-block">
                         <h3>BEYOND CODE</h3>
                         <p style="color: white;">
                             I'm a music lover in the broadest sense: from forró and samba to Metallica and hard techno.
@@ -127,9 +139,9 @@
                             <div class="interest-tag">💭 Philosophy</div>
                             <div class="interest-tag">🔒 Cybersecurity</div>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="info-block">
+                    <article class="info-block">
                         <h3>LANGUAGES</h3>
                         <p style="color: white;">
                             Multilingual communicator fluent in five languages:
@@ -141,9 +153,9 @@
                             <div class="language-item">English</div>
                             <div class="language-item">French</div>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="info-block">
+                    <article class="info-block">
                         <h3>MY APPROACH</h3>
                         <p style="color: white;">
                             I'm an all-rounder who finds in technology the perfect medium to materialize ideas and solve
@@ -151,7 +163,7 @@
                             also <span class="highlight-text">fast learning ability, adaptability, and diverse
                                 perspectives</span>.
                         </p>
-                    </div>
+                    </article>
 
                     <div class="quote-block">
                         <p class="quote-text">"Your new favorite Brazilian."</p>
@@ -160,11 +172,11 @@
             </div>
         </section>
 
-        <!-- 2 FEATURED PROJECTS -->
+        <!-- SECTION: Featured Projects -->
         <section class="content-section">
             <h2 class="section-title" style="color: var(--magenta);">// FEATURED PROJECTS</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <article class="project-card">
                     <h3>Klassics</h3>
                     <p>
                         Klassics is a classic vehicle rental platform developed with Kotlin and Ktor. Functioning as a
@@ -182,8 +194,8 @@
                             VIEW DETAILS →
                         </a>
                     </div>
-                </div>
-                <div class="project-card">
+                </article>
+                <article class="project-card">
                     <h3>Ticketing System</h3>
                     <p>
                         This project involves creating an IT incident management system. Students collect incident data via Google Forms, convert CSV to XML, process data with Python to generate statistics, and store results in JSON format. The assignment emphasizes data transformation, validation, and teamwork, culminating in a multilingual team presentation.
@@ -198,7 +210,7 @@
                             VIEW DETAILS →
                         </a>
                     </div>
-                </div>
+                </article>
             </div>
             <div style="text-align: center; margin-top: 3rem;">
                 <a href="proyectos.html" class="contact-link"
@@ -208,10 +220,10 @@
             </div>
         </section>
 
-        <!-- BRIEF ABOUT ME -->
+        <!-- SECTION: Skills -->
         <section class="content-section">
             <h2 class="section-title" style="color: var(--violet);">// SKILLS</h2>
-            <div class="about-content">
+            <article class="about-content">
                 <p>
                     Junior Android Developer with a strong foundation in Kotlin and a background in Network Systems Administration (ASIR). I specialize in building functional mobile applications while leveraging my systems knowledge to ensure performance and connectivity. Passionate about writing clean code and continuously expanding my expertise in the Android ecosystem.
                 </p>
@@ -229,12 +241,12 @@
                         LEARN MORE ABOUT ME →
                     </a>
                 </div>
-            </div>
+            </article>
         </section>
 
-        <!-- CALL TO ACTION -->
+        <!-- SECTION: Call to Action -->
         <section class="content-section">
-            <div
+            <article
                 style="text-align: center; padding: 3rem 2rem; background: var(--gray); border: 4px solid var(--lime);">
                 <h2 style="color: var(--lime); font-size: 2rem; margin-bottom: 1rem; font-family: 'Inter', sans-serif;">
                     Ready to start your project?
@@ -247,9 +259,34 @@
                     style="border-color: var(--lime); color: var(--lime); font-size: 1.1rem; padding: 1.2rem 2.5rem;">
                     CONTACT ME
                 </a>
-            </div>
+            </article>
         </section>
-    </div>
+    </main>
+
+    <!-- FOOTER con copyright y enlaces de redes sociales -->
+    <footer style="background: var(--gray); padding: 1.5rem 2rem; border-top: 2px solid var(--cyan); margin-top: 4rem;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div style="color: white; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">
+                <p>&copy; 2024 Caio Ganais. Designed & Developed with ❤️</p>
+            </div>
+            
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <p style="color: var(--cyan); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">Follow me:</p>
+                <a href="https://github.com/tuusuario" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="transition: transform 0.3s;">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px;">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/in/tuusuario" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="transition: transform 0.3s;">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px;">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
